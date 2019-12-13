@@ -1,7 +1,7 @@
 # Tidewater Glacier Change in Greenland over the past 34 years
 
 ![UoL Logo](UoL_CDT_color.png)
-*This project is part of the PhD research conducted by Dominik Fahrner at the University of Liverpool.* 
+*This map is part of the research and PhD project by Dominik Fahrner at the University of Liverpool.* 
 
 The interactive map shows annual tidewater glacier margin change for the past 34 years, which were mapped using Google Earth Engine Digitsation Tool (GEEDiT) and were processed using the Margin Change Quantification Tool (MaQiT; Lea, 2018)
 The following data is avialable for each glacier:
