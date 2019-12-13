@@ -13,4 +13,8 @@ The following data is avialable for each glacier:
  
 Map one shows the mapped margins on top of a bedmachine v3 DEM (Morlighem et al., 2017); map two shows the locations of SST and deep water temperature data points used to calculate the annual means on top of a bedmachine v3 DEM. The points were determined using a nearest-neighbour analysis, and in case of the deep water temperatures, cropped to a 50 kilometre buffer to exclude data from the shelf. 
 
+To see the map click here:
+
+
+
 The code to produce this map is based on bokeh and binder and can be found in the repository. 
