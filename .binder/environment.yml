@@ -1,0 +1,6 @@
+dependencies:
+  - bokeh
+  - geopandas
+  - jupyter-server-proxy
+  - glob2
+  - numpy
