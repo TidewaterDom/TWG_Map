@@ -11,18 +11,18 @@ from bokeh.layouts import column
 
 
 # Read in point data of glacier locations
-sw_data = gpd.read_file('okeh_map/data/Glacier_locations/Glacier_Locations_SW.shp'
-nw_data =  gpd.read_file('okeh_map/data/Glacier_locations/Glacier_Locations_NW.shp'
-n_data =  gpd.read_file('okeh_map/data/Glacier_locations/Glacier_Locations_N.shp'
-ne_data =  gpd.read_file('okeh_map/data/Glacier_locations/Glacier_Locations_NE.shp'
-se_data =  gpd.read_file('okeh_map/data/Glacier_locations/Glacier_Locations_SE.shp'
+sw_data = gpd.read_file('bokeh_map/data/Glacier_locations/Glacier_Locations_SW.shp')
+nw_data =  gpd.read_file('bokeh_map/data/Glacier_locations/Glacier_Locations_NW.shp')
+n_data =  gpd.read_file('bokeh_map/data/Glacier_locations/Glacier_Locations_N.shp')
+ne_data =  gpd.read_file('bokeh_map/data/Glacier_locations/Glacier_Locations_NE.shp')
+se_data =  gpd.read_file('bokeh_map/data/Glacier_locations/Glacier_Locations_SE.shp')
 
 # Read in image files for glacier data
-path_sw = glob.glob('okeh_map/data/TWG_images/SW/*.jpg')
-path_nw = glob.glob('okeh_map/data/TWG_images/NW/*.jpg')
-path_n = glob.glob('okeh_map/data/TWG_images/N/*.jpg')
-path_ne = glob.glob('okeh_map/data/TWG_images/NE/*.jpg')
-path_se = glob.glob('okeh_map/data/TWG_images/SE/*.jpg')
+path_sw = glob.glob('bokeh_map/data/TWG_images/SW/*.jpg')
+path_nw = glob.glob('bokeh_map/data/TWG_images/NW/*.jpg')
+path_n = glob.glob('bokeh_map/data/TWG_images/N/*.jpg')
+path_ne = glob.glob('bokeh_map/data/TWG_images/NE/*.jpg')
+path_se = glob.glob('bokeh_map/data/TWG_images/SE/*.jpg')
 
 # Change CRS to be conform with web mercator projection
 sw_data = sw_data.to_crs({'init':'epsg:3857'})
