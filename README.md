@@ -1,5 +1,6 @@
 # Tidewater Glacier Change in Greenland over the past 34 years
-
+![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](url)
 The interactive map shows annual tidewater glacier margin change for the past 34 years, which were mapped using Google Earth Engine Digitsation Tool (GEEDiT) and were processed using the Margin Change Quantification Tool (MaQiT; Lea, 2018)
 The following data is avialable for each glacier:
 
