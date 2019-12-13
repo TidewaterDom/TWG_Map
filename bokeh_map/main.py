@@ -27,19 +27,12 @@ ne_data = gpd.read_file(ne_data_path)
 se_data = gpd.read_file(se_data_path)
 
 
-# sw_image_path = pathlib.Path(os.path.join(dir_path,'data/TWG_images/SW/.shp'))
-# nw_image_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_NW.shp'))
-# n_image_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_N.shp'))
-# ne_image_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_NE.shp'))
-# se_image_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_SE.shp'))
-
-
 # Read in image files for glacier data
-path_sw = glob.glob('bokeh_map/data/TWG_images/SW/*.jpg')
-path_nw = glob.glob('bokeh_map/data/TWG_images/NW/*.jpg')
-path_n = glob.glob('bokeh_map/data/TWG_images/N/*.jpg')
-path_ne = glob.glob('bokeh_map/data/TWG_images/NE/*.jpg')
-path_se = glob.glob('bokeh_map/data/TWG_images/SE/*.jpg')
+path_sw = glob.glob(pathlib.Path(os.path.join(dir_path,'data/TWG_images/SW/*.shp')))
+path_nw = glob.glob(pathlib.Path(os.path.join(dir_path,'data/TWG_images/NW/*.shp')))
+path_n = glob.glob(pathlib.Path(os.path.join(dir_path,'data/TWG_images/N/*.shp')))
+path_ne = glob.glob(pathlib.Path(os.path.join(dir_path,'data/TWG_images/NE/*.shp')))
+path_se = glob.glob(pathlib.Path(os.path.join(dir_path,'data/TWG_images/SE/*.shp')))
 
 # Change CRS to be conform with web mercator projection
 sw_data = sw_data.to_crs({'init':'epsg:3857'})
@@ -181,4 +174,4 @@ se = CircleCross(x='x',y='y', size=10, line_color="#F67280",fill_color=None, lin
 plot.add_glyph(source_se,se)
 
 curdoc().add_root(row(plot))
-curdoc.title = 'Interactive Map of Tidewater Glaciers in Greenland'
+curdoc().title = 'Interactive Map of Tidewater Glaciers in Greenland'
