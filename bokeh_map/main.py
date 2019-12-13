@@ -8,14 +8,31 @@ from bokeh.models import WMTSTileSource, HoverTool
 from bokeh.tile_providers import get_provider, Vendors
 from bokeh.models.markers import CircleCross
 from bokeh.layouts import column
+import pathlib 
+import os 
 
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
+sw_data_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_SW.shp'))
+nw_data_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_NW.shp'))
+n_data_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_N.shp'))
+ne_data_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_NE.shp'))
+se_data_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_SE.shp'))
 
 # Read in point data of glacier locations
-sw_data = gpd.read_file('bokeh_map/data/Glacier_locations/Glacier_Locations_SW.shp')
-nw_data =  gpd.read_file('bokeh_map/data/Glacier_locations/Glacier_Locations_NW.shp')
-n_data =  gpd.read_file('bokeh_map/data/Glacier_locations/Glacier_Locations_N.shp')
-ne_data =  gpd.read_file('bokeh_map/data/Glacier_locations/Glacier_Locations_NE.shp')
-se_data =  gpd.read_file('bokeh_map/data/Glacier_locations/Glacier_Locations_SE.shp')
+sw_data = gpd.read_file(sw_data_path)
+nw_data = gpd.read_file(nw_data_path)
+n_data =  gpd.read_file(n_data_path)
+ne_data = gpd.read_file(ne_data_path)
+se_data = gpd.read_file(se_data_path)
+
+
+# sw_image_path = pathlib.Path(os.path.join(dir_path,'data/TWG_images/SW/.shp'))
+# nw_image_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_NW.shp'))
+# n_image_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_N.shp'))
+# ne_image_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_NE.shp'))
+# se_image_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_SE.shp'))
+
 
 # Read in image files for glacier data
 path_sw = glob.glob('bokeh_map/data/TWG_images/SW/*.jpg')
