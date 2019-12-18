@@ -26,11 +26,11 @@ ne_data = gpd.read_file(path_data/'Glacier_locations/Glacier_Locations_NE.shp')
 se_data = gpd.read_file(path_data/'Glacier_locations/Glacier_Locations_SE.shp')
 
 # Read in image files for glacier data
-path_sw = glob.glob(path_data/'TWG_images/SW/*.shp')
-path_nw = glob.glob(path_data/'TWG_images/NW/*.shp')
-path_n = glob.glob(path_data/'TWG_images/N/*.shp')
-path_ne = glob.glob(path_data/'TWG_images/NE/*.shp')
-path_se = glob.glob(path_data/'TWG_images/SE/*.shp')
+path_sw = glob.glob(path_data/'TWG_images/SW/*.jpg')
+path_nw = glob.glob(path_data/'TWG_images/NW/*.jpg')
+path_n = glob.glob(path_data/'TWG_images/N/*.jpg')
+path_ne = glob.glob(path_data/'TWG_images/NE/*.jpg')
+path_se = glob.glob(path_data/'TWG_images/SE/*.jpg')
 
 # Change CRS to be conform with web mercator projection
 sw_data = sw_data.to_crs({'init':'epsg:3857'})
@@ -96,7 +96,7 @@ for i in path_se:
     img_list_se.append(os.path.abspath(i))
 	
 # Set up interactive plot
-output_file(".html")
+
 tile_providers= get_provider(Vendors.STAMEN_TERRAIN)
 
 source_sw = ColumnDataSource(data=dict(
