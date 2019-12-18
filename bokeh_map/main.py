@@ -18,18 +18,13 @@ path_output = pathlib.Path(os.path.join(dirpath, 'output'))
 if not path_output.exists():
 	path_output.mkdir()
 
-sw_data_path = pathlib.Path(os.path.join(path_data/'Glacier_locations/Glacier_Locations_SW.shp'))
-nw_data_path = pathlib.Path(os.path.join(path_data/'Glacier_locations/Glacier_Locations_NW.shp'))
-n_data_path = pathlib.Path(os.path.join(path_data/'Glacier_locations/Glacier_Locations_N.shp'))
-ne_data_path = pathlib.Path(os.path.join(path_data/'Glacier_locations/Glacier_Locations_NE.shp'))
-se_data_path = pathlib.Path(os.path.join(path_data/'Glacier_locations/Glacier_Locations_SE.shp'))
 
 # Read in point data of glacier locations
-sw_data = gpd.read_file(sw_data_path)
-nw_data = gpd.read_file(nw_data_path)
-n_data =  gpd.read_file(n_data_path)
-ne_data = gpd.read_file(ne_data_path)
-se_data = gpd.read_file(se_data_path)
+sw_data = gpd.read_file(path_data/'Glacier_locations/Glacier_Locations_SW.shp')
+nw_data = gpd.read_file(path_data/'Glacier_locations/Glacier_Locations_NW.shp')
+n_data =  gpd.read_file(path_data/'Glacier_locations/Glacier_Locations_N.shp')
+ne_data = gpd.read_file(path_data/'Glacier_locations/Glacier_Locations_NE.shp')
+se_data = gpd.read_file(path_data/'Glacier_locations/Glacier_Locations_SE.shp')
 
 
 # Read in image files for glacier data
