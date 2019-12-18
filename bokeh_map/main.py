@@ -11,13 +11,18 @@ from bokeh.layouts import column
 import pathlib 
 import os 
 
-dir_path = os.path.dirname(os.path.realpath(__file__))
+dir_path= os.path.dirname(os.path.realpath(__file__))
+path_data = pathlib.Path(os.path.join(dir_path, 'data'))
+path_output = pathlib.Path(os.path.join(dirpath, 'output'))
 
-sw_data_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_SW.shp'))
-nw_data_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_NW.shp'))
-n_data_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_N.shp'))
-ne_data_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_NE.shp'))
-se_data_path = pathlib.Path(os.path.join(dir_path,'data/Glacier_locations/Glacier_Locations_SE.shp'))
+if not path_output.exists():
+	path_output.mkdir()
+
+sw_data_path = pathlib.Path(os.path.join(path_data/'Glacier_locations/Glacier_Locations_SW.shp'))
+nw_data_path = pathlib.Path(os.path.join(path_data/'Glacier_locations/Glacier_Locations_NW.shp'))
+n_data_path = pathlib.Path(os.path.join(path_data/'Glacier_locations/Glacier_Locations_N.shp'))
+ne_data_path = pathlib.Path(os.path.join(path_data/'Glacier_locations/Glacier_Locations_NE.shp'))
+se_data_path = pathlib.Path(os.path.join(path_data/'Glacier_locations/Glacier_Locations_SE.shp'))
 
 # Read in point data of glacier locations
 sw_data = gpd.read_file(sw_data_path)
@@ -28,11 +33,11 @@ se_data = gpd.read_file(se_data_path)
 
 
 # Read in image files for glacier data
-path_sw = glob.glob(pathlib.Path(os.path.join(dir_path,'data/TWG_images/SW/*.shp')))
-path_nw = glob.glob(pathlib.Path(os.path.join(dir_path,'data/TWG_images/NW/*.shp')))
-path_n = glob.glob(pathlib.Path(os.path.join(dir_path,'data/TWG_images/N/*.shp')))
-path_ne = glob.glob(pathlib.Path(os.path.join(dir_path,'data/TWG_images/NE/*.shp')))
-path_se = glob.glob(pathlib.Path(os.path.join(dir_path,'data/TWG_images/SE/*.shp')))
+path_sw = glob.glob(path_data/'TWG_images/SW/*.shp')
+path_nw = glob.glob(path_data/'TWG_images/NW/*.shp')
+path_n = glob.glob(path_data/'TWG_images/N/*.shp')
+path_ne = glob.glob(path_data/'TWG_images/NE/*.shp')
+path_se = glob.glob(path_data/'TWG_images/SE/*.shp')
 
 # Change CRS to be conform with web mercator projection
 sw_data = sw_data.to_crs({'init':'epsg:3857'})
