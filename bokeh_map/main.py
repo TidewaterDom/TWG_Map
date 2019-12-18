@@ -13,7 +13,7 @@ import os
 
 dir_path= os.path.dirname(os.path.realpath(__file__))
 path_data = pathlib.Path(os.path.join(dir_path, 'data'))
-path_output = pathlib.Path(os.path.join(dirpath, 'output'))
+path_output = pathlib.Path(os.path.join(dir_path, 'output'))
 
 if not path_output.exists():
 	path_output.mkdir()
