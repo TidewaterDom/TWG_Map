@@ -170,6 +170,6 @@ p.add_glyph(source_ne, ne)
 
 se = CircleCross(x='x',y='y', size=10, line_color="#F67280",fill_color=None, line_width=2)
 p.add_glyph(source_se,se)
-l = layout(row(plot)
+l = layout(row(p)
 curdoc().add_root(l)
 curdoc().title = 'Interactive Map of Tidewater Glaciers in Greenland'
