@@ -156,22 +156,22 @@ TOOLTIPS = """
 plot = figure(x_range=(-2500000, -1000000), y_range=(7500000, 15000000),plot_width=1900, plot_height=900,\
            x_axis_type="mercator", y_axis_type="mercator",tools='pan,box_zoom, reset,\
            wheel_zoom,hover',tooltips= TOOLTIPS)
-p.add_tile(tile_providers)
+# plot.add_tile(tile_providers)
 
-sw = CircleCross(x='x',y='y', size=10, line_color="#355C7D", fill_color=None, line_width=2)
-plot.add_glyph(source_sw,sw)
+# sw = CircleCross(x='x',y='y', size=10, line_color="#355C7D", fill_color=None, line_width=2)
+# plot.add_glyph(source_sw,sw)
 
-nw = CircleCross(x='x',y= 'y', size=10, line_color="#008080", fill_color=None, line_width=2)
-plot.add_glyph(source_nw,nw)
+# nw = CircleCross(x='x',y= 'y', size=10, line_color="#008080", fill_color=None, line_width=2)
+# plot.add_glyph(source_nw,nw)
 
-n= CircleCross(x='x',y='y', size=10, line_color="#F8B195",fill_color=None, line_width=2)
-plot.add_glyph(source_n, n)
+# n= CircleCross(x='x',y='y', size=10, line_color="#F8B195",fill_color=None, line_width=2)
+# plot.add_glyph(source_n, n)
 
-ne = CircleCross(x='x',y='y' ,size=10, line_color="#C06C84", fill_color=None, line_width=2)
-plot.add_glyph(source_ne, ne)
+# ne = CircleCross(x='x',y='y' ,size=10, line_color="#C06C84", fill_color=None, line_width=2)
+# plot.add_glyph(source_ne, ne)
 
-se = CircleCross(x='x',y='y', size=10, line_color="#F67280",fill_color=None, line_width=2)
-plot.add_glyph(source_se,se)
+# se = CircleCross(x='x',y='y', size=10, line_color="#F67280",fill_color=None, line_width=2)
+# plot.add_glyph(source_se,se)
 
 curdoc().add_root(row(plot))
 curdoc().title = 'Interactive Map of Tidewater Glaciers in Greenland'
