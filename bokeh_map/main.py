@@ -18,7 +18,6 @@ path_output = pathlib.Path(os.path.join(dirpath, 'output'))
 if not path_output.exists():
 	path_output.mkdir()
 
-
 # Read in point data of glacier locations
 sw_data = gpd.read_file(path_data/'Glacier_locations/Glacier_Locations_SW.shp')
 nw_data = gpd.read_file(path_data/'Glacier_locations/Glacier_Locations_NW.shp')
@@ -156,7 +155,7 @@ TOOLTIPS = """
 plot = figure(x_range=(-2500000, -1000000), y_range=(7500000, 15000000),plot_width=1900, plot_height=900,\
            x_axis_type="mercator", y_axis_type="mercator",tools='pan,box_zoom, reset,\
            wheel_zoom,hover',tooltips= TOOLTIPS)
-# plot.add_tile(tile_providers)
+plot.add_tile(tile_providers)
 
 # sw = CircleCross(x='x',y='y', size=10, line_color="#355C7D", fill_color=None, line_width=2)
 # plot.add_glyph(source_sw,sw)
