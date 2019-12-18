@@ -7,7 +7,7 @@ from bokeh.plotting import figure, output_file, ColumnDataSource, curdoc
 from bokeh.models import WMTSTileSource, HoverTool
 from bokeh.tile_providers import get_provider, Vendors
 from bokeh.models.markers import CircleCross
-from bokeh.layouts import column
+from bokeh.layouts import column,row, layout
 import pathlib 
 import os 
 
@@ -24,7 +24,6 @@ nw_data = gpd.read_file(path_data/'Glacier_locations/Glacier_Locations_NW.shp')
 n_data =  gpd.read_file(path_data/'Glacier_locations/Glacier_Locations_N.shp')
 ne_data = gpd.read_file(path_data/'Glacier_locations/Glacier_Locations_NE.shp')
 se_data = gpd.read_file(path_data/'Glacier_locations/Glacier_Locations_SE.shp')
-
 
 # Read in image files for glacier data
 path_sw = glob.glob(path_data/'TWG_images/SW/*.shp')
@@ -171,6 +170,6 @@ p.add_glyph(source_ne, ne)
 
 se = CircleCross(x='x',y='y', size=10, line_color="#F67280",fill_color=None, line_width=2)
 p.add_glyph(source_se,se)
-
-curdoc().add_root(row(p))
+l = layout(row(plot)
+curdoc().add_root(l)
 curdoc().title = 'Interactive Map of Tidewater Glaciers in Greenland'
